@@ -320,6 +320,31 @@ method is ``set``. The following parameter can be used:
 
 For example POST ``/number/desired_delay/set?value=24`` will set the number to 24.
 
+Text
+******
+
+Texts can be set to a value within their min_length and max_length range and will return their current value. For example sending
+a GET request to ``/text/my_text`` could yield this payload:
+
+.. code-block:: json
+
+    {
+      "id": "text-my_text",
+      "min_length": 0,
+      "max_length": 255,
+      "pattern": "",
+      "state": "Hello world",
+      "value": "Hello world"
+    }
+
+POST requests on the other hand allow setting the text, the available
+method is ``set``. The following parameter can be used:
+
+-  **value**: The value you want to set the text to. The value must be within the
+   min_length and max_length range of the text otherwise it will be ignored.
+
+For example POST ``/number/my_text/set?value=Again Hello World`` will set the number to Again Hello World.
+
 Alarm Control Panel
 *******************
 
